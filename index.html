@@ -11,17 +11,9 @@ body{
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg,#ff9a9e,#fad0c4);
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
     height:100vh;
-}
-
-#contador{
-    font-size:20px;
-    font-weight:bold;
-    color:#e63946;
-    margin-bottom:20px;
 }
 
 .carta{
@@ -51,6 +43,25 @@ p{
     color:#e63946;
 }
 
+/* BOTON FOTOS */
+
+.boton-fotos{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 25px;
+    background:#e63946;
+    color:white;
+    text-decoration:none;
+    border-radius:25px;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.boton-fotos:hover{
+    background:#d62839;
+    transform:scale(1.05);
+}
+
 @keyframes fadeIn{
     from{opacity:0; transform:translateY(20px);}
     to{opacity:1; transform:translateY(0);}
@@ -61,68 +72,39 @@ p{
 
 <body>
 
-<h2 id="contador"></h2>
-
 <div class="carta">
 
-<h1>Feliz Cumpleaños ❤️</h1>
+<h1>Feliz Cumpleaños Juli ❤️</h1>
 
 <p>
 Hoy cumplís 21 y no puedo evitar pensar en lo increíble que fue todo lo que vivimos juntos.
 </p>
 
 <p>
-Quién hubiera pensado que todo iba a empezar en el colegio, en esas preparaciones para la misión y que hoy, después de tantos momentos compartidos, seguimos caminando juntos.
+Quién hubiera pensado que todo iba a empezar en el colegio, en esas preparaciones para la misión solidaria al colegio apadrinado… y que hoy, después de tantos momentos compartidos, seguimos caminando juntos.
 </p>
 
 <p>
-En estos 3 años vivimos de todo: salidas, viajes, charlas eternas y momentos que guardo conmigo.
+En estos 3 años vivimos de todo: salidas, viajes, charlas eternas y momentos que guardo muy profundo en mi corazón.
 </p>
 
 <p>
-Gracias por estar siempre, gorda. Por acompañarme y por hacer que mi vida sea mucho más linda desde que te conocí.
+Gracias por estar siempre, gorda. Por acompañarme y por hacer que mi vida sea mucho más linda desde que llegaste.
 </p>
 
 <p>
-Ojalá la vida me siga regalando muchas más cosas con  vos, porque si algo tengo claro es que no hay lugar donde me sienta más feliz que con vos.
+Ojalá la vida me siga regalando muchos años más con vos, porque si algo tengo claro es que no hay lugar donde me sienta más feliz que a tu lado.
 </p>
 
 <p class="firma">
-Te amo, chiqui ❤️
+Te amo mucho, bebita. ❤️
 </p>
+
+<a class="boton-fotos" href="https://photos.app.goo.gl/1jqtTwNHcFbbpRhPA" target="_blank">
+Ver nuestras fotos 📸
+</a>
 
 </div>
 
-<script>
-
-const fechaInicio = new Date("2022-12-09T00:00:00");
-
-function actualizarContador(){
-
-const ahora = new Date();
-let diferencia = ahora - fechaInicio;
-
-let segundos = Math.floor(diferencia / 1000);
-let minutos = Math.floor(segundos / 60);
-let horas = Math.floor(minutos / 60);
-let dias = Math.floor(horas / 24);
-
-let años = Math.floor(dias / 365);
-dias = dias % 365;
-
-let meses = Math.floor(dias / 30);
-dias = dias % 30;
-
-document.getElementById("contador").innerHTML =
-`❤️ Llevamos juntos ${años} años, ${meses} meses y ${dias} días ❤️`;
-
-}
-
-setInterval(actualizarContador,1000);
-actualizarContador();
-
-</script>
-
 </body>
 </html>
-
