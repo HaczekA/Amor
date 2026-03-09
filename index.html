@@ -11,9 +11,17 @@ body{
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg,#ff9a9e,#fad0c4);
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
     height:100vh;
+}
+
+#contador{
+    font-size:20px;
+    font-weight:bold;
+    color:#e63946;
+    margin-bottom:20px;
 }
 
 .carta{
@@ -53,6 +61,8 @@ p{
 
 <body>
 
+<h2 id="contador"></h2>
+
 <div class="carta">
 
 <h1>Feliz Cumpleaños Juli ❤️</h1>
@@ -82,6 +92,36 @@ Te amo mucho, bebita. ❤️
 </p>
 
 </div>
+
+<script>
+
+const fechaInicio = new Date("2022-12-09T00:00:00");
+
+function actualizarContador(){
+
+const ahora = new Date();
+let diferencia = ahora - fechaInicio;
+
+let segundos = Math.floor(diferencia / 1000);
+let minutos = Math.floor(segundos / 60);
+let horas = Math.floor(minutos / 60);
+let dias = Math.floor(horas / 24);
+
+let años = Math.floor(dias / 365);
+dias = dias % 365;
+
+let meses = Math.floor(dias / 30);
+dias = dias % 30;
+
+document.getElementById("contador").innerHTML =
+`❤️ Llevamos juntos ${años} años, ${meses} meses y ${dias} días ❤️`;
+
+}
+
+setInterval(actualizarContador,1000);
+actualizarContador();
+
+</script>
 
 </body>
 </html>
